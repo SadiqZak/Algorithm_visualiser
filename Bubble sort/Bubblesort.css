@@ -1,0 +1,18 @@
+
+.array-container{
+    position: absolute;
+    left: 50px;
+}
+
+.array-bar{
+    width: 2px;
+    margin: 0 1px;
+    display: inline-block;
+    background-color: black;
+}
+
+.button-class{
+    display: flex;
+    margin: 5px auto;
+}
+
