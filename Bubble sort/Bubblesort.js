@@ -32,17 +32,19 @@ window.onload = () => {
                    
                     if(arr[i] < arr[j]){ 
                         setTimeout(()=>{
-                            containerArr.children[i].style.backgroundColor = "red"
+                        
                             let temp = containerArr.children[i].style.height
                             let newHeight = containerArr.children[j].style.height
                             containerArr.children[i].style.height = newHeight
                             containerArr.children[j].style.height = temp
                             containerArr.children[i].style.backgroundColor = "blue"
+                            
                         }, j*10)
+
+                        containerArr.children[i].style.backgroundColor = "red"
                         
                         swap(arr, i, j)  
                     }
-                    containerArr.children[i].style.backgroundColor = "black"
           
                 } 
             },i*10)    
