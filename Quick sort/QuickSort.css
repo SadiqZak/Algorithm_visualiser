@@ -1,0 +1,16 @@
+
+#array-container{
+    text-align: center;
+}
+
+.array-bar{
+    width: 2px;
+    margin: 0 1px;
+    display: inline-block;
+    background-color: black;
+}
+
+.btn-container{
+    display: flex;
+    margin: 5px 50px auto;
+}

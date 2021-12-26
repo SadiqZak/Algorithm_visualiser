@@ -22,34 +22,38 @@ window.onload = () => {
     butSort.innerText = "Bubble Sort"
     butSort.classList.add("generate-array")
     butSort.onclick = function(e){
-        let containerArr = e.target.parentElement.parentElement
+        let containerArr = e.target.parentElement.parentElement 
         // console.log(bubbleSort(arr),containerArr.children[1])
 
        
             for(let i= 0; i< arr.length; i++){
-                setTimeout(()=>{         
+                setTimeout(()=>{          
                 for(let j=0; j<=i; j++){
-                   
+                    // containerArr.children[j].style.backgroundColor = "blue"  
+                    setTimeout(()=>{ 
                     if(arr[i] < arr[j]){ 
-                        setTimeout(()=>{
-                        
-                            let temp = containerArr.children[i].style.height
-                            let newHeight = containerArr.children[j].style.height
-                            containerArr.children[i].style.height = newHeight
-                            containerArr.children[j].style.height = temp
-                            containerArr.children[i].style.backgroundColor = "blue"
-                            
-                        }, j*10)
+                        // setTimeout(()=>{          }, j*10)
+                    
+                        containerArr.children[j].style.backgroundColor = "red"  
+                        containerArr.children[j+1].style.backgroundColor = "red"
+                        let temp = containerArr.children[i].style.height
+                        let newHeight = containerArr.children[j].style.height
+                        containerArr.children[i].style.height = newHeight
+                        containerArr.children[j].style.height = temp
+                        // containerArr.children[j].style.backgroundColor = "blue"
 
-                        containerArr.children[i].style.backgroundColor = "red"
-                        
                         swap(arr, i, j)  
+
+                        containerArr.children[j].style.backgroundColor = "red"  
+                        containerArr.children[j+1].style.backgroundColor = "red"
                     }
-          
+                },i*100) 
+                    containerArr.children[j].style.backgroundColor = "blue"  
                 } 
-            },i*10)    
+                // containerArr.children[i].style.backgroundColor = "black   
+            }, i*100)  
             } 
-     
+      
          console.log(arr)
     }
     divEle.appendChild(butSort)
