@@ -10,8 +10,14 @@
     background-color: black;
 }
 
+#generate-array{
+    max-width: 80%;
+    width: 150px;
+    margin-bottom: 5px;
+}
 .btn-container{
     display: flex;
+    flex-direction: column;
     margin: 5px 50px auto;
 }
 

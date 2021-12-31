@@ -1,4 +1,4 @@
-import { divUpdate } from "./Main.js"
+import { divUpdate } from "../Main.js"
 
 export const quick = (arr) => { // helper function for quick sort
     quickSort(arr, 0, arr.length-1)

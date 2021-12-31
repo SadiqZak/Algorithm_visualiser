@@ -1,9 +1,35 @@
-import { quick } from "./QuickSort.js"; //to acces a folder use "./"
+import { quick } from "./QuickSort.js"; //to acces a folder use "./" //import algorithm
 const arrayContainer = document.querySelector("#array-container");
 const generateNewArray = document.querySelector("#generate-array");
 const quickSortArray = document.querySelector("#quick-sort");
 
 let divheight = [] //keeping track of the arr
+let divs = [] //keeping track of divs?
+let delay = 0
+
+export const divUpdate = (i, j) => {
+    let arr = divs
+
+    setTimeout(()=>{
+
+        let temp = arr[i].style.height
+
+        arr[i].style.backgroundColor = "red"
+        arr[i].style.height = arr[j].style.height
+
+        arr[j].style.backgroundColor = "blue"
+        arr[j].style.height = temp
+
+    },delay*10)
+
+    // arr[i].style.backgroundColor = "black"
+    // arr[j].style.backgroundColor = "black"
+
+    delay+=1
+    
+
+    return arr
+}
 
 const generateRandomArray = () => {         // generate a random Array using generateRandomNum
     let arr = []
@@ -24,37 +50,25 @@ const generateRandomNum = (max, min) =>{        // generate random number (heigh
 
 const generateBars = () =>{         //generate bars
 
+    delay = 0
     arrayContainer.innerHTML = ""   //remove all of the html that previously exists
 
     let arr = generateRandomArray()
 
     for(let i=0; i<arr.length; i++){
-        let divEle = document.createElement("div")
-        divEle.classList.add("array-bar")
-        divEle.style.height =`${arr[i]}px`
-        arrayContainer.appendChild(divEle)
+        divs[i] = document.createElement("div")
+        divs[i].classList.add("array-bar")
+        divs[i].style.height =`${arr[i]}px`
+        arrayContainer.appendChild(divs[i])
     }
 }
 
-// export const updateArrays = (e, firstValue, secondValue) =>{
-//     console.log("called")
-//     let containerArr = e.target.parentElement.parentElement
-
-//     let temp = containerArr.children[firstValue].style.height
-//     let newHeight = containerArr.children[secondValue].style.height
-//     containerArr.children[firstValue].style.height = newHeight
-//     containerArr.children[secondValue].style.height = temp 
-    
-// }
 
 window.onload = generateBars() //calling function
 
 generateNewArray.addEventListener("click",generateBars)
-quickSortArray.addEventListener("click",function(e){
-    let containerArr = e.target.parentElement.parentElement
-    let check = containerArr.children[0].children[0].style.height
-
-    console.log(e.target.parentElement.parentElement)
-    console.log(check)
-    console.log(quick(divheight))
+quickSortArray.addEventListener("click",function(){
+    quick(divheight)
 })
+
+

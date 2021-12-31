@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Visualizer</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body> 
+    <div id="array-container"></div>
+    <div class="btn-container">
+        <button id="generate-array">Generate Array</button>
+        <div>
+            <label for="algorithms">Choose an Algorithm:</label>
+            <input id ="algorithms" list="algos">
+            <datalist id="algos">
+                <option value="Bubble Sort">
+                <option value="Quick Sort">
+                <option value="Select Sort">
+                <option value="Merge Sort">
+            </datalist>
+            <button id="submit-btn">Submit</button>
+        </div>
+        
+    </div>
+    
+</body>
+<script type="module" src="Main.js"></script>  
+<script type="module" src="./Algorithms/Bubblesort.js"></script>
+<script type="module" src="./Algorithms/QuickSort.js"></script>
+<script type="module" src="./Algorithms/Selectionsort.js"></script>
+<script type="module" src="./Algorithms/Mergesort.js"></script>
+<!-- make sure to use type as module -->
+</html>

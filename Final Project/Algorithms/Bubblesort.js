@@ -1,4 +1,4 @@
-import { divUpdate } from "./Main.js"
+import { divUpdate } from "../Main.js"
 
 export const bubble = (arr) => {
     
