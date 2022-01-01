@@ -36,6 +36,30 @@ export const divUpdate = (i, j) => {
     return arr
 }
 
+export const modDivUpdate = (i, value) => {
+    let arr = divs
+    
+    setTimeout(()=>{
+  
+        arr[i].style.backgroundColor = "red"
+        arr[i].style.height = `${value}px`
+
+        if(arr[i+1]){
+            arr[i+1].style.backgroundColor = "blue"
+        }
+        
+        
+    },delay*10)
+
+    // arr[i].style.backgroundColor = "black"
+    // arr[j].style.backgroundColor = "black"
+
+    delay+=1
+    
+
+    return arr
+}
+
 const generateRandomArray = () => {         // generate a random Array using generateRandomNum
     let arr = []
 
@@ -87,10 +111,9 @@ submitBtn.addEventListener("click",function(){
     }
 
     if(algoInput.value === "Merge Sort"){
-        console.log(merge(divheight))
+        merge(divheight)
     }
 
-    console.log(merge([3,4,7,8,2,5,0]))
     algoInput.value = ""
 })
 
